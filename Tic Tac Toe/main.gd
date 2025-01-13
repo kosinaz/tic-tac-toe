@@ -1,11 +1,14 @@
 extends Node
 
 var callback = JavaScript.create_callback(self, "callbacktest")
+var console = JavaScript.get_interface("console")
+var window = JavaScript.get_interface("window")
 
 func _ready():
 	# Get the JavaScript window object
-	var window = JavaScript.get_interface("window")
 	if window:
+		window.parent.test_callback = callback
+		window.parent.Rune.runeTest("my arg from Godot")
 		# Prepare dummy data for the `onChange` method
 		var cells = [null, "player1", "player2", null, "player1", null, "player2", null, null] # Example board state
 		var player_ids = ["player1", "player2"]
@@ -50,13 +53,11 @@ func _ready():
 			"action": {"name": "claimCell", "cellIndex": 2}
 		}
 		
-		# Call the `onChange` method in JavaScript
-		window.onChangeFromGodot(to_json(data))
-		window.test("test1", "test2", to_json({"test3": "test3"}))
-	
-	var notification = JavaScript.get_interface("Notification")
-	notification.requestPermission().then(callback)
 
 func callbacktest(args):
 	print("callback has fired")
 	print("args:", args)
+
+
+func _on_Timer_timeout():
+	window.parent.Rune.runeTest()

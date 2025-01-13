@@ -9,7 +9,7 @@ html {
 }
 
 /* Ensure the iframe fills the viewport */
-iframe {
+#godot-game {
   border: none;           /* Removes border around the iframe */
   display: block;         /* Ensures proper block-level behavior */
   width: 100vw;           /* Full viewport width */

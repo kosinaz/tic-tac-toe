@@ -361,3 +361,9 @@ margin_top = 258.0
 margin_right = 270.0
 margin_bottom = 272.0
 align = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
