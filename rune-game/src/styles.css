@@ -217,3 +217,14 @@ li[player="0"]:before {
 li[player="1"]:before {
   background-image: url(./assets/o.svg);
 }
+
+/* Ensure the iframe fills the viewport */
+#godot-game {
+  border: none;           /* Removes border around the iframe */
+  display: block;         /* Ensures proper block-level behavior */
+  width: 100vw;           /* Full viewport width */
+  height: 100vh;          /* Full viewport height */
+  position: absolute;
+	top: 0;
+	left: 0;
+}
