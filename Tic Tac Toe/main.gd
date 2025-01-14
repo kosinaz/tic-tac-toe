@@ -5,6 +5,7 @@ var console = JavaScript.get_interface("console")
 var window = JavaScript.get_interface("window")
 
 onready var http_request = $HTTPRequest
+onready var http_request2 = $HTTPRequest2
 
 func _ready():
 	# Get the JavaScript window object
@@ -22,9 +23,13 @@ func callbacktest(args):
 	var error = http_request.request(data[0].avatarUrl)
 	if error != OK:
 		print("Failed to start HTTP request. Error code:", error)
+	
+	error = http_request2.request(data[1].avatarUrl)
+	if error != OK:
+		print("Failed to start HTTP request. Error code:", error)
 
 # Signal handler for HTTPRequest completion
-func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+func _on_HTTPRequest_request_completed(_result, response_code, _headers, body):
 	if response_code == 200:  # Check if the request was successful
 		var image = Image.new()
 		var error = image.load_png_from_buffer(body)  # Load image from response body
@@ -39,6 +44,18 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	else:
 		print("Failed to fetch avatar. Response code:", response_code)
 
-
-func _on_Timer_timeout():
-	window.parent.Rune.runeTest()
+# Signal handler for HTTPRequest2 completion
+func _on_HTTPRequest2_request_completed(_result, response_code, _headers, body):
+	if response_code == 200:  # Check if the request was successful
+		var image = Image.new()
+		var error = image.load_png_from_buffer(body)  # Load image from response body
+		if error == OK:
+			var texture = ImageTexture.new()
+			texture.create_from_image(image, 0)
+			
+			# Set the texture to the TextureRect
+			$"%AvatarTextureRect2".texture = texture
+		else:
+			print("Error loading image:", error)
+	else:
+		print("Failed to fetch avatar. Response code:", response_code)
