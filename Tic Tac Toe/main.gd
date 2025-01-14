@@ -1,6 +1,6 @@
 extends Node
 
-var callback = JavaScript.create_callback(self, "callbacktest")
+var init_players_callback = JavaScript.create_callback(self, "init_players")
 var console = JavaScript.get_interface("console")
 var window = JavaScript.get_interface("window")
 
@@ -10,20 +10,16 @@ onready var http_request2 = $HTTPRequest2
 func _ready():
 	# Get the JavaScript window object
 	if window:
-		window.parent.test_callback = callback
-		window.parent.Rune.runeTest("my arg from Godot")
+		window.parent.initPlayersInGodot = init_players_callback
+		window.parent.Rune.onGodotReady()
 		
 
-func callbacktest(args):
-	print("player id: ", args[1])
+func init_players(args):
 	var data = JSON.parse(args[0]).result
 	$"%NameLabel1".text = data[0].displayName
 	$"%NameLabel2".text = data[1].displayName
 	$"%ControllerLabel1".text = "(you)" if args[1] == data[0].playerId else " "
 	$"%ControllerLabel2".text = "(you)" if args[1] == data[1].playerId else " "
-	
-	print("Requesting avatar URL: ", data[0].avatarUrl)
-	
 	var error = http_request.request(data[0].avatarUrl)
 	if error != OK:
 		print("Failed to start HTTP request. Error code:", error)
