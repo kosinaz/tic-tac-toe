@@ -293,7 +293,8 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="AvatarTextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="AvatarTextureRect1" type="TextureRect" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 margin_top = 120.0
 margin_right = 270.0
 margin_bottom = 236.0
@@ -303,14 +304,16 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
-[node name="NameLabel" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="NameLabel1" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 margin_top = 240.0
 margin_right = 270.0
 margin_bottom = 254.0
 text = "Player 1"
 align = 1
 
-[node name="ControllerLabel" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="ControllerLabel1" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 margin_top = 258.0
 margin_right = 270.0
 margin_bottom = 272.0
@@ -339,7 +342,8 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="AvatarTextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
+[node name="AvatarTextureRect2" type="TextureRect" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
+unique_name_in_owner = true
 margin_top = 120.0
 margin_right = 270.0
 margin_bottom = 236.0
@@ -349,14 +353,16 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
-[node name="NameLabel" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
+[node name="NameLabel2" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
+unique_name_in_owner = true
 margin_top = 240.0
 margin_right = 270.0
 margin_bottom = 254.0
 text = "Player 2"
 align = 1
 
-[node name="ControllerLabel" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
+[node name="ControllerLabel2" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
+unique_name_in_owner = true
 margin_top = 258.0
 margin_right = 270.0
 margin_bottom = 272.0
@@ -366,4 +372,7 @@ align = 1
 wait_time = 5.0
 autostart = true
 
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

@@ -1,19 +1,32 @@
 // Wait for the Rune client to initialize
 var initialized = false
+var initializedGodot = false
 var godotGame = document.getElementById("godot-game").contentWindow;
+var players = []
 
-function onChange() {
+function initUI(allPlayerIds, yourPlayerId) {
+	allPlayerIds.forEach((playerId) => {
+		const { displayName, avatarUrl } = Rune.getPlayerInfo(playerId)
+		players.push({ displayName, avatarUrl })
+	})
+}
+
+function onChange(args) {
 	if (!initialized) {
 		initialized = true
-		console.log("client inited")
+		console.log("onChange", args.allPlayerIds)
+		initUI(args.allPlayerIds, args.yourPlayerId)
 	}
 	
 	if (typeof callbacktest === 'function') {
 		callbacktest()
 	}
-	if (typeof test_callback === 'function') {
-		test_callback("my arg from JS")
+
+	if (!initializedGodot && typeof test_callback === 'function') {
+		initializedGodot = true
+		test_callback(JSON.stringify(players))
 	}
+
 }
 
 function onChangeFromGodot(game, players, yourPlayerId, action) {
