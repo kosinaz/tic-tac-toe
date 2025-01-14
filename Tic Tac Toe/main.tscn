@@ -366,6 +366,7 @@ unique_name_in_owner = true
 margin_top = 258.0
 margin_right = 270.0
 margin_bottom = 272.0
+text = "(you)"
 align = 1
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]

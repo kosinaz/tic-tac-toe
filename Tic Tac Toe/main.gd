@@ -15,9 +15,13 @@ func _ready():
 		
 
 func callbacktest(args):
+	print("player id: ", args[1])
 	var data = JSON.parse(args[0]).result
 	$"%NameLabel1".text = data[0].displayName
 	$"%NameLabel2".text = data[1].displayName
+	$"%ControllerLabel1".text = "(you)" if args[1] == data[0].playerId else " "
+	$"%ControllerLabel2".text = "(you)" if args[1] == data[1].playerId else " "
+	
 	print("Requesting avatar URL: ", data[0].avatarUrl)
 	
 	var error = http_request.request(data[0].avatarUrl)

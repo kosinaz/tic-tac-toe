@@ -3,11 +3,13 @@ var initialized = false
 var initializedGodot = false
 var godotGame = document.getElementById("godot-game").contentWindow;
 var players = []
+var localPlayerId = ""
 
-function initUI(allPlayerIds, yourPlayerId) {
+function initPlayers(allPlayerIds, yourPlayerId) {
+	localPlayerId = yourPlayerId
 	allPlayerIds.forEach((playerId) => {
 		const { displayName, avatarUrl } = Rune.getPlayerInfo(playerId)
-		players.push({ displayName, avatarUrl })
+		players.push({ displayName, avatarUrl, playerId })
 	})
 }
 
@@ -15,7 +17,7 @@ function onChange(args) {
 	if (!initialized) {
 		initialized = true
 		console.log("onChange", args.allPlayerIds)
-		initUI(args.allPlayerIds, args.yourPlayerId)
+		initPlayers(args.allPlayerIds, args.yourPlayerId)
 	}
 	
 	if (typeof callbacktest === 'function') {
@@ -24,7 +26,7 @@ function onChange(args) {
 
 	if (!initializedGodot && typeof test_callback === 'function') {
 		initializedGodot = true
-		test_callback(JSON.stringify(players))
+		test_callback(JSON.stringify(players), localPlayerId)
 	}
 
 }
