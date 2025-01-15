@@ -9,11 +9,15 @@ function setup(allPlayerIds) {
   return game
 }
 
-function claimCell(cellIndex, { game, playerId }) {
-  if (game.cells[cellIndex] !== null || playerId === game.lastMovePlayerId) {
+function claimCell(cellIndex, { game, playerId, allPlayerIds }) {
+  if (game.cells[cellIndex] !== null ) {
+    console.log("Cell already claimed")
     throw Rune.invalidAction()
   }
-
+  if (playerId === game.lastMovePlayerId) {
+    console.log("Player already moved")
+    throw Rune.invalidAction()
+  }
   game.cells[cellIndex] = playerId
   game.lastMovePlayerId = playerId
   game.winCombo = findWinningCombo(game.cells)

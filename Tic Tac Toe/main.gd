@@ -1,8 +1,11 @@
 extends Node
 
 var init_players_callback = JavaScript.create_callback(self, "init_players")
+var update_board_callback = JavaScript.create_callback(self, "update_board")
 var console = JavaScript.get_interface("console")
 var window = JavaScript.get_interface("window")
+var player_id = ""
+var player_symbol = "o"
 
 onready var http_request = $HTTPRequest
 onready var http_request2 = $HTTPRequest2
@@ -11,15 +14,24 @@ func _ready():
 	# Get the JavaScript window object
 	if window:
 		window.parent.initPlayersInGodot = init_players_callback
+		window.parent.updateBoardInGodot = update_board_callback
 		window.parent.Rune.onGodotReady()
-		
 
 func init_players(args):
 	var data = JSON.parse(args[0]).result
+	player_id = args[1]
 	$"%NameLabel1".text = data[0].displayName
 	$"%NameLabel2".text = data[1].displayName
-	$"%ControllerLabel1".text = "(you)" if args[1] == data[0].playerId else " "
-	$"%ControllerLabel2".text = "(you)" if args[1] == data[1].playerId else " "
+	if args[1] == data[0].playerId:
+		$"%ControllerLabel1".text = "(you)"
+		player_symbol = "o"
+	else:
+		$"%ControllerLabel1".text = " "
+	if args[1] == data[1].playerId:
+		$"%ControllerLabel2".text = "(you)"
+		player_symbol = "x"
+	else:
+		$"%ControllerLabel2".text = " "
 	var error = http_request.request(data[0].avatarUrl)
 	if error != OK:
 		print("Failed to start HTTP request. Error code:", error)
@@ -27,6 +39,20 @@ func init_players(args):
 	error = http_request2.request(data[1].avatarUrl)
 	if error != OK:
 		print("Failed to start HTTP request. Error code:", error)
+		
+func update_board(args):
+	var data = JSON.parse(args[0]).result
+	for i in range(data.size()):
+		var cell = data[i]
+		if cell == null:
+			continue
+		if cell == player_id:
+			get_node("%SymbolTextureButton" + str(i + 1)).texture_disabled = load("res://assets/" + player_symbol + ".svg")
+		elif player_symbol == "x":
+			get_node("%SymbolTextureButton" + str(i + 1)).texture_disabled = load("res://assets/o.svg")
+		else:
+			get_node("%SymbolTextureButton" + str(i + 1)).texture_disabled = load("res://assets/x.svg")
+		get_node("%SymbolTextureButton" + str(i + 1)).disabled = true
 
 # Signal handler for HTTPRequest completion
 func _on_HTTPRequest_request_completed(_result, response_code, _headers, body):
@@ -59,3 +85,8 @@ func _on_HTTPRequest2_request_completed(_result, response_code, _headers, body):
 			print("Error loading image:", error)
 	else:
 		print("Failed to fetch avatar. Response code:", response_code)
+
+
+func _on_SymbolTextureButton_pressed(id):
+	window.parent.Rune.actions.claimCell(id - 1)
+

@@ -55,7 +55,8 @@ custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
-[node name="SymbolTextureButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer1"]
+[node name="SymbolTextureButton1" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer1"]
+unique_name_in_owner = true
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 163.0
@@ -77,7 +78,8 @@ custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
-[node name="SymbolTextureButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer2"]
+[node name="SymbolTextureButton2" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer2"]
+unique_name_in_owner = true
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 163.0
@@ -99,7 +101,8 @@ custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
-[node name="SymbolTextureButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer3"]
+[node name="SymbolTextureButton3" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer3"]
+unique_name_in_owner = true
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 162.0
@@ -121,7 +124,8 @@ custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
-[node name="SymbolTextureButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer4"]
+[node name="SymbolTextureButton4" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer4"]
+unique_name_in_owner = true
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 163.0
@@ -144,7 +148,8 @@ custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
-[node name="SymbolTextureButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer5"]
+[node name="SymbolTextureButton5" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer5"]
+unique_name_in_owner = true
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 163.0
@@ -167,7 +172,8 @@ custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
-[node name="SymbolTextureButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer6"]
+[node name="SymbolTextureButton6" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer6"]
+unique_name_in_owner = true
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 162.0
@@ -189,7 +195,8 @@ custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
-[node name="SymbolTextureButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer7"]
+[node name="SymbolTextureButton7" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer7"]
+unique_name_in_owner = true
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 163.0
@@ -212,7 +219,8 @@ custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
-[node name="SymbolTextureButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer8"]
+[node name="SymbolTextureButton8" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer8"]
+unique_name_in_owner = true
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 163.0
@@ -235,7 +243,8 @@ custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
-[node name="SymbolTextureButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer9"]
+[node name="SymbolTextureButton9" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer9"]
+unique_name_in_owner = true
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 162.0
@@ -373,5 +382,14 @@ align = 1
 
 [node name="HTTPRequest2" type="HTTPRequest" parent="."]
 
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer1/SymbolTextureButton1" to="." method="_on_SymbolTextureButton_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer2/SymbolTextureButton2" to="." method="_on_SymbolTextureButton_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer3/SymbolTextureButton3" to="." method="_on_SymbolTextureButton_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer4/SymbolTextureButton4" to="." method="_on_SymbolTextureButton_pressed" binds= [ 4 ]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer5/SymbolTextureButton5" to="." method="_on_SymbolTextureButton_pressed" binds= [ 5 ]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer6/SymbolTextureButton6" to="." method="_on_SymbolTextureButton_pressed" binds= [ 6 ]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer7/SymbolTextureButton7" to="." method="_on_SymbolTextureButton_pressed" binds= [ 7 ]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer8/SymbolTextureButton8" to="." method="_on_SymbolTextureButton_pressed" binds= [ 8 ]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer9/SymbolTextureButton9" to="." method="_on_SymbolTextureButton_pressed" binds= [ 9 ]]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="request_completed" from="HTTPRequest2" to="." method="_on_HTTPRequest2_request_completed"]

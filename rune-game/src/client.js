@@ -13,11 +13,16 @@ function initPlayers(allPlayerIds, yourPlayerId) {
 	})
 }
 
-function onChange(args) {
+function onChange({ game, yourPlayerId, action, allPlayerIds }) {
+	console.log("onChange")
 	if (!initialized) {
 		initialized = true
-		initPlayers(args.allPlayerIds, args.yourPlayerId)
+		initPlayers(allPlayerIds, yourPlayerId)
+		return
 	}
+	const { cells, winCombo, lastMovePlayerId, freeCells } = game
+	console.log("cells", cells)
+	updateBoardInGodot(JSON.stringify(cells))
 }
 
 Rune.initClient({ onChange })
