@@ -1,14 +1,14 @@
 extends Node
 
-var init_players_callback = JavaScript.create_callback(self, "init_players")
-var update_board_callback = JavaScript.create_callback(self, "update_board")
-var console = JavaScript.get_interface("console")
-var window = JavaScript.get_interface("window")
+var init_players_callback = JavaScriptBridge.create_callback(init_players)
+var update_board_callback = JavaScriptBridge.create_callback(update_board)
+var console = JavaScriptBridge.get_interface("console")
+var window = JavaScriptBridge.get_interface("window")
 var player_id = ""
 var player_symbol = "o"
 
-onready var http_request = $HTTPRequest
-onready var http_request2 = $HTTPRequest2
+@onready var http_request = $HTTPRequest
+@onready var http_request2 = $HTTPRequest2
 
 func _ready():
 	# Get the JavaScript window object
@@ -18,7 +18,9 @@ func _ready():
 		window.parent.Rune.onGodotReady()
 
 func init_players(args):
-	var data = JSON.parse(args[0]).result
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(args[0])
+	var data = test_json_conv.data
 	player_id = args[1]
 	$"%NameLabel1".text = data[0].displayName
 	$"%NameLabel2".text = data[1].displayName
@@ -41,7 +43,9 @@ func init_players(args):
 		print("Failed to start HTTP request. Error code:", error)
 		
 func update_board(args):
-	var data = JSON.parse(args[0]).result
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(args[0])
+	var data = test_json_conv.data
 	for i in range(data.size()):
 		var cell = data[i]
 		if cell == null:
@@ -60,8 +64,7 @@ func _on_HTTPRequest_request_completed(_result, response_code, _headers, body):
 		var image = Image.new()
 		var error = image.load_png_from_buffer(body)  # Load image from response body
 		if error == OK:
-			var texture = ImageTexture.new()
-			texture.create_from_image(image, 0)
+			var texture = ImageTexture.create_from_image(image) #,0
 			
 			# Set the texture to the TextureRect
 			$"%AvatarTextureRect1".texture = texture
@@ -76,8 +79,7 @@ func _on_HTTPRequest2_request_completed(_result, response_code, _headers, body):
 		var image = Image.new()
 		var error = image.load_png_from_buffer(body)  # Load image from response body
 		if error == OK:
-			var texture = ImageTexture.new()
-			texture.create_from_image(image, 0)
+			var texture = ImageTexture.create_from_image(image) #,0
 			
 			# Set the texture to the TextureRect
 			$"%AvatarTextureRect2".texture = texture
@@ -89,4 +91,3 @@ func _on_HTTPRequest2_request_completed(_result, response_code, _headers, body):
 
 func _on_SymbolTextureButton_pressed(id):
 	window.parent.Rune.actions.claimCell(id - 1)
-

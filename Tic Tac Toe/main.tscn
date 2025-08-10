@@ -1,17 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://cvbaxh03mo8ui"]
 
-[ext_resource path="res://assets/o.svg" type="Texture" id=1]
-[ext_resource path="res://grid_container.gd" type="Script" id=2]
-[ext_resource path="res://assets/x.svg" type="Texture" id=3]
-[ext_resource path="res://main.gd" type="Script" id=4]
-[ext_resource path="res://symbol_texture_button.gd" type="Script" id=5]
+[ext_resource type="Texture2D" uid="uid://4lxay1jsk027" path="res://assets/o.svg" id="1"]
+[ext_resource type="Script" uid="uid://i1tg2cd0t1kn" path="res://grid_container.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://twrvgwwbovw1" path="res://assets/x.svg" id="3"]
+[ext_resource type="Script" uid="uid://yyrxvl8743hh" path="res://main.gd" id="4"]
+[ext_resource type="Script" uid="uid://b0ia6m5v05xd6" path="res://symbol_texture_button.gd" id="5"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource( 4 )
+script = ExtResource("4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -19,377 +20,280 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
-margin_right = 576.0
-margin_bottom = 680.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/VBoxContainer/MarginContainer"]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 560.0
-margin_bottom = 664.0
+layout_mode = 2
 alignment_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer"]
-margin_top = 104.0
-margin_right = 544.0
-margin_bottom = 648.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="ButtonMarginContainer1" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer"]
-margin_right = 179.0
-margin_bottom = 179.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="SymbolTextureButton1" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer1"]
 unique_name_in_owner = true
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 163.0
-margin_bottom = 163.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-expand = true
 stretch_mode = 5
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="ButtonMarginContainer2" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer"]
-margin_left = 183.0
-margin_right = 362.0
-margin_bottom = 179.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="SymbolTextureButton2" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer2"]
 unique_name_in_owner = true
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 163.0
-margin_bottom = 163.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-expand = true
 stretch_mode = 5
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="ButtonMarginContainer3" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer"]
-margin_left = 366.0
-margin_right = 544.0
-margin_bottom = 179.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="SymbolTextureButton3" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer3"]
 unique_name_in_owner = true
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 162.0
-margin_bottom = 163.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-expand = true
 stretch_mode = 5
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="ButtonMarginContainer4" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer"]
-margin_top = 183.0
-margin_right = 179.0
-margin_bottom = 362.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="SymbolTextureButton4" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer4"]
 unique_name_in_owner = true
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 163.0
-margin_bottom = 163.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-expand = true
 stretch_mode = 5
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="ButtonMarginContainer5" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer"]
-margin_left = 183.0
-margin_top = 183.0
-margin_right = 362.0
-margin_bottom = 362.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="SymbolTextureButton5" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer5"]
 unique_name_in_owner = true
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 163.0
-margin_bottom = 163.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-expand = true
 stretch_mode = 5
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="ButtonMarginContainer6" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer"]
-margin_left = 366.0
-margin_top = 183.0
-margin_right = 544.0
-margin_bottom = 362.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="SymbolTextureButton6" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer6"]
 unique_name_in_owner = true
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 162.0
-margin_bottom = 163.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-expand = true
 stretch_mode = 5
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="ButtonMarginContainer7" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer"]
-margin_top = 366.0
-margin_right = 179.0
-margin_bottom = 544.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="SymbolTextureButton7" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer7"]
 unique_name_in_owner = true
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 163.0
-margin_bottom = 162.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-expand = true
 stretch_mode = 5
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="ButtonMarginContainer8" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer"]
-margin_left = 183.0
-margin_top = 366.0
-margin_right = 362.0
-margin_bottom = 544.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="SymbolTextureButton8" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer8"]
 unique_name_in_owner = true
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 163.0
-margin_bottom = 162.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-expand = true
 stretch_mode = 5
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="ButtonMarginContainer9" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer"]
-margin_left = 366.0
-margin_top = 366.0
-margin_right = 544.0
-margin_bottom = 544.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="SymbolTextureButton9" type="TextureButton" parent="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer9"]
 unique_name_in_owner = true
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 162.0
-margin_bottom = 162.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-expand = true
 stretch_mode = 5
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
-margin_top = 684.0
-margin_right = 576.0
-margin_bottom = 1024.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/VBoxContainer/MarginContainer2"]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 560.0
-margin_bottom = 324.0
+layout_mode = 2
 ratio = 2.0
 alignment_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer"]
-margin_right = 544.0
-margin_bottom = 272.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer"]
-margin_right = 270.0
-margin_bottom = 272.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer"]
-margin_right = 270.0
-margin_bottom = 272.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="SymbolTextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
-margin_right = 270.0
-margin_bottom = 116.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 1 )
-expand = true
+texture = ExtResource("1")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="AvatarTextureRect1" type="TextureRect" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 120.0
-margin_right = 270.0
-margin_bottom = 236.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
-expand = true
+texture = ExtResource("3")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="NameLabel1" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 240.0
-margin_right = 270.0
-margin_bottom = 254.0
+layout_mode = 2
 text = "Player 1"
-align = 1
+horizontal_alignment = 1
 
 [node name="ControllerLabel1" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 258.0
-margin_right = 270.0
-margin_bottom = 272.0
+layout_mode = 2
 text = "(you)"
-align = 1
+horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer"]
-margin_left = 274.0
-margin_right = 544.0
-margin_bottom = 272.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer2"]
-margin_right = 270.0
-margin_bottom = 272.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="SymbolTextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
-margin_right = 270.0
-margin_bottom = 116.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
-expand = true
+texture = ExtResource("3")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="AvatarTextureRect2" type="TextureRect" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
 unique_name_in_owner = true
-margin_top = 120.0
-margin_right = 270.0
-margin_bottom = 236.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
-expand = true
+texture = ExtResource("3")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="NameLabel2" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
 unique_name_in_owner = true
-margin_top = 240.0
-margin_right = 270.0
-margin_bottom = 254.0
+layout_mode = 2
 text = "Player 2"
-align = 1
+horizontal_alignment = 1
 
 [node name="ControllerLabel2" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer2/AspectRatioContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
 unique_name_in_owner = true
-margin_top = 258.0
-margin_right = 270.0
-margin_bottom = 272.0
+layout_mode = 2
 text = "(you)"
-align = 1
+horizontal_alignment = 1
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="HTTPRequest2" type="HTTPRequest" parent="."]
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer1/SymbolTextureButton1" to="." method="_on_SymbolTextureButton_pressed" binds= [ 1 ]]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer2/SymbolTextureButton2" to="." method="_on_SymbolTextureButton_pressed" binds= [ 2 ]]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer3/SymbolTextureButton3" to="." method="_on_SymbolTextureButton_pressed" binds= [ 3 ]]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer4/SymbolTextureButton4" to="." method="_on_SymbolTextureButton_pressed" binds= [ 4 ]]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer5/SymbolTextureButton5" to="." method="_on_SymbolTextureButton_pressed" binds= [ 5 ]]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer6/SymbolTextureButton6" to="." method="_on_SymbolTextureButton_pressed" binds= [ 6 ]]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer7/SymbolTextureButton7" to="." method="_on_SymbolTextureButton_pressed" binds= [ 7 ]]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer8/SymbolTextureButton8" to="." method="_on_SymbolTextureButton_pressed" binds= [ 8 ]]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/AspectRatioContainer/GridContainer/ButtonMarginContainer9/SymbolTextureButton9" to="." method="_on_SymbolTextureButton_pressed" binds= [ 9 ]]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="request_completed" from="HTTPRequest2" to="." method="_on_HTTPRequest2_request_completed"]

@@ -1,0 +1,14 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1754812330
+button_margin_container.gd::GDScript::16360964071517086::1754812318::0::1::::<>MarginContainer<><>0<>0<><>::
+default_env.tres::Environment::-1::1754812318::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1736982845::0::1::::<><><>0<>0<><>::
+grid_container.gd::GDScript::616350329726360017::1754812318::0::1::::<>GridContainer<><>0<>0<><>::
+icon.png::CompressedTexture2D::5732206987348304468::1736873622::1754812331::1::::<><><>0<>0<>96094a272ec20bc612ed8348d66641e7<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
+main.gd::GDScript::1735151697073560109::1754812318::0::1::::<>Node<><>0<>0<><>::
+main.tscn::PackedScene::-1::1754812318::0::1::::<><><>0<>0<><>::res://assets/o.svg<>res://grid_container.gd<>res://assets/x.svg<>res://main.gd<>res://symbol_texture_button.gd
+player_indicator.tscn::PackedScene::-1::1754812318::0::1::::<><><>0<>0<><>::
+symbol_texture_button.gd::GDScript::4157712833900532993::1754812318::0::1::::<>TextureButton<><>0<>0<><>::
+::res://assets/::1736873696
+o.svg::CompressedTexture2D::2059582412789939370::1736873622::1754812331::1::::<><><>0<>0<>33fe5c38a1738f99302e31df979e4920<>res://.godot/imported/o.svg-0742c1e953b8153c52dfebb4693c284e.ctex::
+x.svg::CompressedTexture2D::1380074380388252058::1736873622::1754812331::1::::<><><>0<>0<>6780da98660da7954b43cae53c15f9e9<>res://.godot/imported/x.svg-4ec34a0c3436d75830f0873d26a6f389.ctex::
